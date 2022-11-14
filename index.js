@@ -34,7 +34,7 @@ searchBtn.addEventListener("click", async () => {
     // add eventlistener to each movie listed in search
     document.querySelectorAll(".add-to-watchlist").forEach((movie) => {
       movie.addEventListener("click", (event) => {
-        // if the movie's imdbID is not in watchlist, add it to watchlist and update the 'watchlist' sessionStorage item 
+        // if the movie's imdbID is not in watchlist, add it to watchlist and update the 'watchlist' localStorage item 
         // (localStorage does not work on GitHub Pages)
         if (!watchlist.includes(event.target.parentNode.id)) {
           watchlist.unshift(event.target.parentNode.id);

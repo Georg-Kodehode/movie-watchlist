@@ -1,7 +1,7 @@
 import { getMovieHtml } from "./getMovieHtml.js";
 
 const movieWatchlist = document.getElementById("movie-watchlist");
-let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+let watchlist = JSON.parse(sessionStorage.getItem("watchlist")) || [];
 let allMoviesInWatchlist = {};
 
 async function getWatchlist() {
@@ -35,11 +35,11 @@ async function getWatchlist() {
 
   document.querySelectorAll(".remove-from-watchlist").forEach((movie) => {
     movie.addEventListener("click", (event) => {
-      localStorage.removeItem(event.target.parentNode.id);
+      sessionStorage.removeItem(event.target.parentNode.id);
       let updatedWatchlist = watchlist.filter(
         (movieId) => movieId != event.target.parentNode.id
       );
-      localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist));
+      sessionStorage.setItem("watchlist", JSON.stringify(updatedWatchlist));
       location.reload();
     });
   });

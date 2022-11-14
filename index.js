@@ -4,7 +4,7 @@ const movieList = document.getElementById("movie-list");
 const searchBtn = document.getElementById("search-btn");
 const input = document.getElementById("input");
 
-let watchlist = JSON.parse(sessionStorage.getItem("watchlist")) || [];
+let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 
 //add a click event listener to the search button
 searchBtn.addEventListener("click", async () => {
@@ -38,7 +38,7 @@ searchBtn.addEventListener("click", async () => {
         // (localStorage does not work on GitHub Pages)
         if (!watchlist.includes(event.target.parentNode.id)) {
           watchlist.unshift(event.target.parentNode.id);
-          sessionStorage.setItem(`watchlist`, JSON.stringify(watchlist));
+          localStorage.setItem(`watchlist`, JSON.stringify(watchlist));
           alert("This movie was added to your watchlist.");
         } else {
           // alert the user if the movie was already in the user's watchlist

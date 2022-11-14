@@ -4,7 +4,7 @@ const movieList = document.getElementById("movie-list");
 const searchBtn = document.getElementById("search-btn");
 const input = document.getElementById("input");
 
-let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+let watchlist = JSON.parse(sessionStorage.getItem("watchlist")) || [];
 
 // KOMMENTÉR koden!!!
 
@@ -32,7 +32,7 @@ searchBtn.addEventListener("click", async () => {
       movie.addEventListener("click", (event) => {
         if (!watchlist.includes(event.target.parentNode.id)) {
           watchlist.unshift(event.target.parentNode.id);
-          localStorage.setItem(`watchlist`, JSON.stringify(watchlist));
+          sessionStorage.setItem(`watchlist`, JSON.stringify(watchlist));
           alert("This movie was added to your watchlist.");
         } else {
           alert("This movie is already in your watchlist.");

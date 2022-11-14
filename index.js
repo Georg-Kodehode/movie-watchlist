@@ -14,7 +14,7 @@ searchBtn.addEventListener("click", async () => {
   // if input is not empty, fetch the 10 first results from the API based on the input
   if (movieQuery) {
     const res = await fetch(
-      `http://www.omdbapi.com/?apikey=960903a6&s=${movieQuery}`
+      `https://www.omdbapi.com/?apikey=960903a6&s=${movieQuery}`
     );
     const data = await res.json();
     movieList.innerHTML = "";
@@ -22,7 +22,7 @@ searchBtn.addEventListener("click", async () => {
     try {
       for (let i = 0; i < data.Search.length; i++) {
         const response = await fetch(
-          `http://www.omdbapi.com/?apikey=960903a6&i=${data.Search[i].imdbID}`
+          `https://www.omdbapi.com/?apikey=960903a6&i=${data.Search[i].imdbID}`
         );
         const newdata = await response.json();
         movieList.innerHTML += getMovieHtml(newdata, false);

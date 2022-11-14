@@ -2,7 +2,7 @@ import { getMovieHtml } from "./getMovieHtml.js";
 
 const movieWatchlist = document.getElementById("movie-watchlist");
 // get the watchlist item from sessionStorage (localStorage does not work on GitHub Pages)
-let watchlist = JSON.parse(sessionStorage.getItem("watchlist")) || [];
+let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 // allMoviesInWatchlist is used to sort the movies alphabetically
 let allMoviesInWatchlist = {};
 
@@ -40,12 +40,12 @@ async function getWatchlist() {
   document.querySelectorAll(".remove-from-watchlist").forEach((movie) => {
     movie.addEventListener("click", (event) => {
       // remove the clicked item from sessionStorage
-      sessionStorage.removeItem(event.target.parentNode.id);
+      localStorage.removeItem(event.target.parentNode.id);
       // update the wathlist and update the 'watchlist' item in sessionStorage
       let updatedWatchlist = watchlist.filter(
         (movieId) => movieId != event.target.parentNode.id
       );
-      sessionStorage.setItem("watchlist", JSON.stringify(updatedWatchlist));
+      localStorage.setItem("watchlist", JSON.stringify(updatedWatchlist));
       // reload to show the updated watchlist
       location.reload();
     });

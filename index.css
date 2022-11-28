@@ -27,8 +27,7 @@ header {
 }
 
 .header-text-inner-wrapper {
-  width: 550px;
-  padding: 0 40px;
+  width: 462px;
   box-sizing: border-box;
   position: absolute;
   top: calc(50% - 26px);

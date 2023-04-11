@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie watchlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="watchlist.js" type="module" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="darken-img"></div>
+      <div class="header-text-outer-wrapper">
+        <div class="header-text-inner-wrapper">
+          <h1>Find your film</h1>
+          <a href="index.html">Search for movies</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="movie-list" id="movie-watchlist">
+        <div class="placeholder-wrapper" id="watchlist-placeholder">
+          <h3 class="placeholder-text watchlist">
+            Your watchlist is looking a little empty...
+          </h3>
+          <div class="add-to-watchlist watchlist-placeholder">
+            <img src="images/plus-btn-image.png" />
+            <a href="index.html">Let’s add some movies!</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
